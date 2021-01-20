@@ -5,8 +5,8 @@ Artikel-Nr. 062011
 EAN: 4023392620119  
 
 Das Modul sendet mit 868,35 MHz genau auf der geforderten Frequenz.   
-Über einen Steuereingang lässt sich der HF-Träger ein- und ausschalten, die Modulationsart entspricht damit einem einfachen On-off keying.  
+Über einen Steuereingang lässt sich der HF-Träger ein- und ausschalten, die Modulationsart entspricht damit einem einfachen On-off keying (OOK).  
 https://en.wikipedia.org/wiki/On%E2%80%93off_keying  
-das ist die Einfachste Form der Amplitudenumtastung (englisch Amplitude-Shift Keying, abgekürzt ASK)  
+das ist die einfachste Form der "Amplitudenumtastung" (englisch "Amplitude-Shift Keying", abgekürzt ASK)  
 https://de.wikipedia.org/wiki/Amplitudenumtastung  
 
