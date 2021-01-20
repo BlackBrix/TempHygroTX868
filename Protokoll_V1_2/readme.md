@@ -1,5 +1,5 @@
 Das folgende Datenübertragungsformat habe ich bei meinen Versuchen herausgefunden. 
-Es gibt ein älteres, das <a href="protocol_alt.htm">hier</a> beschrieben ist. Bei diesem werden die Telegramme dreimal
+Es gibt ein älteres, das <a href="https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1">hier</a> beschrieben ist. Bei diesem werden die Telegramme dreimal
 hintereinander im Abstand von 0.1s ausgesendet.
 Die Beschreibung des neueren Protokolls folgt im Anschluss.<br><br>
 Ich konnte keine Probleme mit den Displays erkennen, wenn es genau eingehalten wird.<br><br>
