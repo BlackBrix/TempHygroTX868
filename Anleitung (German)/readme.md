@@ -48,7 +48,8 @@ Das Auslesen von Luftfeuchtigkeit und Temperatur aus dem HTU21D über den I²C B
 
 Die Integration der beiden benötigten Libraries HTU21D und TempHygroTX868 in die Arduino Entwicklungsumgebung erfolgt in der [üblichen Art und Weise](<https://www.arduino.cc/en/guide/libraries>). Damit lässt sich mit wenig Aufwand ein minimaler Arduino-Sketch Programmieren und in den Wattuino laden (Board: Arduino Pro Mini, Processor: ATmega328 3.3 V, 8 MHz), der in regelmäßigen Abständen Temperatur und Luftfeuchte vom HTU21D abfragt und über den TX868 versendet:
 
-<pre><span class="preprocessor">#include &lt;TempHygroTX868.h&gt;</span>
+```
+<span class="preprocessor">#include &lt;TempHygroTX868.h&gt;</span>
 <span class="preprocessor">#include &lt;Wire.h&gt;</span>
 <span class="preprocessor">#include &lt;SparkFunHTU21D.h&gt;</span>
 
@@ -72,7 +73,7 @@ TempHygroTX868 tx;
 
   delay((<span class="keyword">unsigned</span>¨NBSP;<span class="keyword">long</span>)tx.getPause() * 1000UL);
 }
-</pre>
+```
 
 Die Software Pendants für Sensor und Transmitter sind die Klassen HTU21D und TempHygroTX868. Die globalen Variablen htu und tx nehmen jeweils eine Instanz dieser Klassen auf. In der setup() Methode erfolgt dann die einmalige Initialisierung der externen Hardware, tx.setup() bekommt dabei die Nummer des digitalen Ports übergeben, an welchem der TX868 hängt. Die loop() Funktion liest Luftfeuchte und Temperatur vom HTU21D aus und übergibt die Messwerte an die Funktion tx.send(), die das Datenpaket auf 868,35 MHz versendet. Danach pausiert das Programm mittels delay() die Ausführung. Das ist notwendig, da man im 868 MHz Band keinesfalls dauernd senden darf, sondern nur 36 Sekunden pro Stunde. Die Pausenlänge ist dabei nicht fest kodiert, sondern es geht die Adresse des Sensors mit ein. Damit wird verhindert, dass zwei Sensoren immer zur gleichen Zeit senden und ihre Signale gegenseitig stören.
 
@@ -80,11 +81,7 @@ Die Software Pendants für Sensor und Transmitter sind die Klassen HTU21D und Te
 
 Als Stromversorgung dienen zwei AAA Alkali-Mangan Batterien, die im neuen Zustand eine Spannung von etwa 3 V liefern und eine Kapazität von durchschnittlich 1200 mAh haben sollen. Die Messung des Stromverbrauchs der kompletten Schaltung im Ruhezustand ergibt zur Zeit einen Wert von etwa 4 mA. Damit wären die Batterien nach spätestens 300 h (knapp zwei Wochen) leer. Da die hardwareseitigen Maßnahmen zur Reduzierung des Stromverbrauchs (Auslöten R3 und U2) ausgereizt sind, muss eine weitere Verringerung softwaretechnisch erfolgen.
 
-Die Ursache für den hohen Ruhestromverbrauch ist die Tatsache, dass der ATmega auch während der delay() Anweisung aktiv bleibt. Will man den Stromverbrauch weiter verringern, muss man ihn in den Power-down Mode versetzen. Dazu sind verschiedene Modifikationen an der Software notwendig. Die letztendlich eingesetzte Software ist Bestandteil der TempHygroTX868 Library als Sketch <span class="filename">TX868_HTU21_LowPower</span>
-
- im <span class="filename">examples</span>
-
- Verzeichnis. Man kann ihn auch direkt [auf Github einsehen](<https://github.com/skaringa/TempHygroTX868/blob/master/examples/TX868_HTU21_LowPower/TX868_HTU21_LowPower.ino>).
+Die Ursache für den hohen Ruhestromverbrauch ist die Tatsache, dass der ATmega auch während der delay() Anweisung aktiv bleibt. Will man den Stromverbrauch weiter verringern, muss man ihn in den Power-down Mode versetzen. Dazu sind verschiedene Modifikationen an der Software notwendig. Die letztendlich eingesetzte Software ist Bestandteil der TempHygroTX868 Library als Sketch **'TX868_HTU21_LowPower'** im **'examples'** Verzeichnis. Man kann ihn auch direkt [auf Github einsehen](<https://github.com/skaringa/TempHygroTX868/blob/master/examples/TX868_HTU21_LowPower/TX868_HTU21_LowPower.ino>).
 
 Der entscheidende Code steckt in der Funktion pwrDownSleep(), die immer am Ende von loop() aufgerufen wird: Nach einigen vorbereitenden Maßnahmen, wie dem Abschalten des Analog-Digital-Wandlers, versetzt der Aufruf von sleep\_cpu() den ATmega in den Power-down Schlafzustand, in dem er typischerweise nur noch 0,1 µA verbraucht! Die nächste Anweisung - sleep\_disable() - kommt erst dann zur Ausführung, wenn die CPU wieder aufwacht. Dazu benötigt man einen Interrupt, den in der vorliegenden Lösung der Watchdog-Timer des ATmega auslöst.
 
