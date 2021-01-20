@@ -49,29 +49,29 @@ Das Auslesen von Luftfeuchtigkeit und Temperatur aus dem HTU21D über den I²C B
 Die Integration der beiden benötigten Libraries HTU21D und TempHygroTX868 in die Arduino Entwicklungsumgebung erfolgt in der [üblichen Art und Weise](<https://www.arduino.cc/en/guide/libraries>). Damit lässt sich mit wenig Aufwand ein minimaler Arduino-Sketch Programmieren und in den Wattuino laden (Board: Arduino Pro Mini, Processor: ATmega328 3.3 V, 8 MHz), der in regelmäßigen Abständen Temperatur und Luftfeuchte vom HTU21D abfragt und über den TX868 versendet:
 
 ```
-<span class="preprocessor">#include &lt;TempHygroTX868.h&gt;</span>
-<span class="preprocessor">#include &lt;Wire.h&gt;</span>
-<span class="preprocessor">#include &lt;SparkFunHTU21D.h&gt;</span>
+#include <TempHygroTX868.h>
+#include <Wire.h>
+#include <SparkFunHTU21D.h>
 
 HTU21D htu;
 TempHygroTX868 tx;
 
-<span class="keyword">void</span> setup()
+void setup()
 {
   htu.begin();
-  tx.setup(5); <span class="slashslashcomment">// TX868 is at data pin 5</span>
+  tx.setup(5); // TX868 is at data pin 5
 }
 
-<span class="keyword">void</span> loop()
+void loop()
 {
   byte address = 3;
-  <span class="keyword">float</span> humidity = htu.readHumidity();
-  <span class="keyword">float</span> temperature = htu.readTemperature();
+  float humidity = htu.readHumidity();
+  float temperature = htu.readTemperature();
 
   tx.setAddress(address);
   tx.send(temperature, humidity);
 
-  delay((<span class="keyword">unsigned</span>¨NBSP;<span class="keyword">long</span>)tx.getPause() * 1000UL);
+  delay((unsigned long)tx.getPause() * 1000UL);
 }
 ```
 
