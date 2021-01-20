@@ -23,7 +23,7 @@ https://www.sensirion.com/de/umweltsensoren/feuchtesensoren/sht85-steckbarer-feu
   
 ### kein Schaltregler step-up oder LDO   
 (bringt immer große Verluste, gerade bei kleinen Strömen verschlechtert sich der Wirkungsgrad enorm beim Shaltregler)  
-statt dessen Atmega328 mit 4MHz oider 1MHz und dann 3,0V ..1,8V betreiben (ohne Bootloader , sondern ISP-Programmierung)  
+statt dessen Atmega328 mit 4MHz oder 1MHz betreiben und dann mit 3,0V..1,8V direkt aus 2x AA Lithium betreiben (ohne Bootloader , sondern ISP-Programmierung)  
 vergl.: http://www.gammon.com.au/power  
   
 ### ggf. Sender und Sensor beim MCU-Schlaf mit abschalten (über Ausgänge der MCU),  
