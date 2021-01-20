@@ -88,8 +88,8 @@ To enable the old protocol, pass the protocol version to the setup() method:
 
 ## References
 
-* [Protokollversion V1.2][https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_2]
-* [Protokollversion V1.1][https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1]
+* [Protokollversion V1.2] https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_2
+* [Protokollversion V1.1] https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1
 
 ## License
 
@@ -111,6 +111,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 [header]: https://github.com/skaringa/TempHygroTX868/blob/master/TempHygroTX868.h "Header file"
 [example]: https://github.com/skaringa/TempHygroTX868/blob/master/examples "Examples"
 [release]: https://github.com/skaringa/TempHygroTX868/releases/latest
-[prot_11]: http://www.dc3yc.homepage.t-online.de/protocol_alt.htm
-[prot_12]: http://www.dc3yc.homepage.t-online.de/protocol.htm
+[prot_11]: https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1
+[prot_12]: https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_2
 
