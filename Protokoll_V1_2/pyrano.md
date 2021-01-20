@@ -1,4 +1,4 @@
-Strahlungsleistungs-Sensor:<BR>
+Strahlungsleistungs-Sensor (V1.2):<BR>
 noch nicht fertig!!!<br>
 
 <table cellspacing="2" cellpadding="2" border="0">
