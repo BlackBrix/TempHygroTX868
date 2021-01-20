@@ -27,37 +27,37 @@ Der Typ besteht aus 3 Bit, die wie folgt codiert sind. Die Links zeigen die einz
 &nbsp;<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="78%">
   <tr>
     <td width="8%" align="center">0</td>
-    <td width="92%"><a href="thermo.htm">Thermo</a> (AS3)</td>
+    <td width="92%"><a href="thermo.md">Thermo</a> (AS3)</td>
   </tr>
   <tr>
     <td width="8%" align="center">1</td>
-    <td width="92%"><a href="thermohygro.htm">Thermo/Hygro</a> (AS2000, ASH2000, 
+    <td width="92%"><a href="thermohygro.md">Thermo/Hygro</a> (AS2000, ASH2000, 
     S2000, S2001A, S2001IA, ASH2200, S300IA)</td>
   </tr>
   <tr>
     <td width="8%" align="center">2</td>
-    <td width="92%"><a href="regen.htm">Regen</a> (S2000R)</td>
+    <td width="92%"><a href="regen.md">Regen</a> (S2000R)</td>
   </tr>
   <tr>
     <td width="8%" align="center">3</td>
-    <td width="92%"><a href="wind.htm">Wind</a> (S2000W)</td>
+    <td width="92%"><a href="wind.md">Wind</a> (S2000W)</td>
   </tr>
   <tr>
     <td width="8%" align="center">4</td>
-    <td width="92%"><a href="thermohygrobaro.htm">Thermo/Hygro/Baro</a> (S2001I, 
+    <td width="92%"><a href="thermohygrobaro.md">Thermo/Hygro/Baro</a> (S2001I, 
     S2001ID)</td>
   </tr>
   <tr>
     <td width="8%" align="center">5</td>
-    <td width="92%"><a href="licht.htm">Helligkeit</a> (S2500H)</td>
+    <td width="92%"><a href="licht.md">Helligkeit</a> (S2500H)</td>
   </tr>
   <tr>
     <td width="8%" align="center">6</td>
-    <td width="92%"><a href="pyrano.htm">Pyrano (Strahlungsleistung)</a></td>
+    <td width="92%"><a href="pyrano.md">Pyrano (Strahlungsleistung)</a></td>
   </tr>
   <tr>
     <td width="8%" align="center">7</td>
-    <td width="92%"><a href="kombi.htm">Kombi</a> (KS200, KS300)</td>
+    <td width="92%"><a href="kombi.md">Kombi</a> (KS200, KS300)</td>
   </tr>
 </table>
 &nbsp;<p>Die Adresse geht von 0 bis 7, sodass nur 3 Bit benötigt werden. Das restliche Bit wird für Temperaturvorzeichen 
