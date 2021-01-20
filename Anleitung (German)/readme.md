@@ -135,5 +135,4 @@ Und noch etwas weiteres fällt auf: Die drahtlose Kommunikation zwischen Sensor 
 
 <!-- -->
 
-<div></div>
 
