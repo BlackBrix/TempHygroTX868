@@ -14,11 +14,11 @@ Das LSBit wird zuerst übertragen.<br><br>
 Für die Quersumme am Schluss werden alle Nibbles beginnend mit dem Typ XOR-verknüpft<br><br>
 Der Typ besteht aus 3 Bit, die wie folgt codiert sind. Die Links zeigen die einzelnen Protokolle:
 <ol start="0">
-	<li><a href="thermo_alt.htm">Thermo</a>
-	<li><a href="thermohygro_alt.htm">Thermo/Hygro</a>
-	<li><a href="regen_alt.htm">Regen</a>
-	<li><a href="wind_alt.htm">Wind</a>
-	<li><a href="thermohygrobaro_alt.htm">Thermo/Hygro/Baro</a>
+	<li><a href="thermo_alt.md">Thermo</a>
+	<li><a href="thermohygro_alt.md">Thermo/Hygro</a>
+	<li><a href="regen_alt.md">Regen</a>
+	<li><a href="wind_alt.md">Wind</a>
+	<li><a href="thermohygrobaro_alt.md">Thermo/Hygro/Baro</a>
 </ol>
 Von dieser Protokollversion habe ich noch keine Helligkeitssensoren oder Pyranometer gemessen, sodass ich deren
 Aufbau nicht beschreiben kann.<br><br>
