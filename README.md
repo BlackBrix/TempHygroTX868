@@ -1,3 +1,40 @@
+https://www.kompf.de/tech/rftemp.html  
+https://github.com/BlackBrix/TempHygroTX868  
+(Original: https://github.com/skaringa/TempHygroTX868 )  
+  
+Sender ist: "HF-Sendemodul TX868-75, 868 MHz"  
+https://de.elv.com/hf-sendemodul-tx868-75-868-mhz-062011  
+  
+## geplante Verbesserungen (in diesem Fork): 
+----
+### genauerer oder sparsamerer Sensor:  
+sparsamer(?): ------------------------------------  
+Sensirion SHT40  
+https://www.soselectronic.de/articles/sensirion/feuchtigkeits-und-temperatursensor-sht40-2527?utm_source=sosnews2017&utm_medium=email&utm_term=webtr&utm_content=SC&utm_campaign=Sensirion_SHT40&btn=more  
+https://www.sensirion.com/de/umweltsensoren/feuchtesensoren/humidity-sensor-sht4x/  
+genauer: ------------------------------------  
+Sensirion SHT35-DIS (-B oder -F)  
+https://www.sensirion.com/de/umweltsensoren/feuchtesensoren/digitale-feuchtesensoren-fuer-diverse-anwendungen/  
+https://www.tindie.com/products/closedcube/sht35-d-digital-humidity-temperature-sensor/  
+library: https://github.com/closedcube/ClosedCube_SHT31D_Arduino  
+oder SHT85 ?  
+https://www.sensirion.com/de/umweltsensoren/feuchtesensoren/sht85-steckbarer-feuchtesensor-fuer-einfachen-austausch/  
+  
+  
+### kein Schaltregler step-up oder LDO   
+(bringt immer große Verluste, gerade bei kleinen Strömen verschlechtert sich der Wirkungsgrad enorm beim Shaltregler)  
+statt dessen Atmega328 mit 4MHz oider 1MHz und dann 3,0V ..1,8V betreiben (ohne Bootloader , sondern ISP-Programmierung)  
+vergl.: http://www.gammon.com.au/power  
+  
+### ggf. Sender und Sensor beim MCU-Schlaf mit abschalten (über Ausgänge der MCU),  
+wenn sich das lohnt -> Sender und Sensor haben schon recht kleine (Ruhe-) Stromaufnahme  
+Sensor: 0,2 - 0,4µA  
+Sender: Zitat aus Datenblatt: "Standby Stromaufnahme <10nA"  
+ 
+----
+## original readme.md :
+----
+   
 # TempHygroTX868
 
 Arduino library to control the ELV TX868 rf transmitter module to send temperature and humidity values over the air at 868.35 MHz.
