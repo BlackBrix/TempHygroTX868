@@ -88,8 +88,8 @@ To enable the old protocol, pass the protocol version to the setup() method:
 
 ## References
 
-* [Protokollversion V1.2] https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_2
-* [Protokollversion V1.1] https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1
+* [Protokollversion V1.2](https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_2)
+* [Protokollversion V1.1](https://github.com/BlackBrix/TempHygroTX868/tree/master/Protokoll_V1_1)
 
 ## License
 
